@@ -33,10 +33,10 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./anaconda-pkg-build/linux/Dockerfile
           platform: linux/amd64
-          build-args:
-            - BASEDIST=amd64/centos:7
-            - MC_ARCH=x86_64
-            - GCC_VER=7.3
+          build-args: |
+            BASEDIST=amd64/centos:7
+            MC_ARCH=x86_64
+            GCC_VER=7.3
           tags: continuumio/c3i-linux-64:cos7
           push: github.ref == 'refs/heads/master'
 
@@ -47,10 +47,10 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./anaconda-pkg-build/linux/Dockerfile
           platform: linux/ppc64le
-          build-args:
-            - BASEDIST=ppc64le/centos:7
-            - MC_ARCH=ppc64le
-            - GCC_VER=7.3
+          build-args: |
+            BASEDIST=ppc64le/centos:7
+            MC_ARCH=ppc64le
+            GCC_VER=7.3
           tags: continuumio/c3i-linux-ppc64le:cos7
           push: github.ref == 'refs/heads/master'
 
@@ -61,10 +61,10 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./anaconda-pkg-build/linux/Dockerfile
           platform: linux/arm64/v8
-          build-args:
-            - BASEDIST=arm64v8/centos:7
-            - MC_ARCH=aarch64
-            - GCC_VER=10.2
+          build-args: |
+            BASEDIST=arm64v8/centos:7
+            MC_ARCH=aarch64
+            GCC_VER=10.2
           tags: continuumio/c3i-linux-aarch64:cos7
           push: github.ref == 'refs/heads/master'
 
@@ -75,9 +75,9 @@ jobs:
           builder: ${{ steps.buildx.outputs.name }}
           file: ./anaconda-pkg-build/linux/Dockerfile
           platform: linux/s390x
-          build-args:
-            - BASEDIST=s390x/clefos:7
-            - MC_ARCH=s390x
-            - GCC_VER=7.5
+          build-args: |
+            BASEDIST=s390x/clefos:7
+            MC_ARCH=s390x
+            GCC_VER=7.5
           tags: continuumio/c3i-linux-s390x:cos7
           push: github.ref == 'refs/heads/master'
